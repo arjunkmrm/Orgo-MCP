@@ -2,7 +2,7 @@
 
 Control virtual computers through the Model Context Protocol (MCP). Built with FastMCP and Orgo.
 
-Spin up desktop environments for Computer Use Agents (CUA).
+Spin up cloud desktop environments for Computer Use Agents (CUA).
 
 ## Quick Start
 
@@ -66,8 +66,12 @@ if __name__ == "__main__":
 | `initialize_computer` | Start virtual computer |
 | `get_screenshot` | Take screen capture |
 | `left_click`, `right_click`, `double_click` | Mouse actions |
+| `scroll` | Scroll up/down |
 | `type_text`, `press_key` | Keyboard input |
+| `wait` | Wait for specified seconds |
 | `execute_bash` | Run terminal commands |
+| `restart_computer`, `shutdown_computer` | Computer lifecycle |
+| `get_status`, `list_sessions` | Status and session management |
 | `prompt` | Claude AI Computer Use |
 
 ## Claude AI Computer Use Example
@@ -83,4 +87,4 @@ await client.call_tool("prompt", {
 
 - Python 3.8+
 - Orgo API key
-- Anthropic API key (for AI features)# computer-use-mcp
+- Anthropic API key (for Claude CUA)
