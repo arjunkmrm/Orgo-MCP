@@ -9,9 +9,6 @@ startCommand:
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
     type: object
-    required:
-      - orgoApiKey
-      - anthropicApiKey
     properties:
       orgoApiKey:
         type: string
@@ -20,4 +17,6 @@ startCommand:
         type: string
         description: Anthropic API key
 
-  exampleConfig: {}
+  exampleConfig:
+    orgoApiKey: "your-orgo-api-key-here"
+    anthropicApiKey: "your-anthropic-api-key-here"
