@@ -59,7 +59,6 @@ registry = ComputerRegistry()
 # Core Tools
 @mcp.tool()
 async def initialize_computer(
-    api_key: str,
     project_id: Optional[str] = None,
     session_id: Optional[str] = None,
     base_api_url: Optional[str] = None,
@@ -79,7 +78,6 @@ async def initialize_computer(
     
     try:
         computer = Computer(
-            api_key=api_key,
             project_id=project_id,
             base_api_url=base_api_url,
             config=config
@@ -315,7 +313,6 @@ async def prompt(
     provider: str = "anthropic",
     model: str = "claude-3-7-sonnet-20250219",
     thinking_enabled: bool = False,
-    api_key: Optional[str] = None,
     session_id: Optional[str] = None,
     ctx: Optional[Context] = None
 ) -> Dict[str, Any]:
@@ -324,7 +321,7 @@ async def prompt(
     if ctx:
         await ctx.info(f"Executing prompt: {instruction[:100]}{'...' if len(instruction) > 100 else ''}")
     
-    if provider == "anthropic" and not api_key and not os.environ.get("ANTHROPIC_API_KEY"):
+    if provider == "anthropic" and not os.environ.get("ANTHROPIC_API_KEY"):
         raise ValueError("Anthropic API key required but not provided")
     
     try:
@@ -333,7 +330,6 @@ async def prompt(
             provider=provider,
             model=model,
             thinking_enabled=thinking_enabled,
-            api_key=api_key
         )
         
         return {
