@@ -19,7 +19,3 @@ startCommand:
       anthropicApiKey:
         type: string
         description: Anthropic API key
-
-  exampleConfig:
-    orgoApiKey: "your-orgo-api-key-here"
-    anthropicApiKey: "your-anthropic-api-key-here"
