@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize FastMCP server
-mcp = FastMCP(name="Computer MCP 🖥️")
+mcp = FastMCP(name="Orgo MCP 🖥️")
 
 # Data Models
 class ComputerConfig(BaseModel):
@@ -345,9 +345,9 @@ async def prompt(
 # Resources
 @mcp.resource("computer://server/info")
 def server_info() -> Dict[str, Any]:
-    """Information about the Computer MCP server."""
+    """Information about the Orgo MCP server."""
     return {
-        "name": "Computer MCP",
+        "name": "Orgo MCP",
         "description": "MCP interface for controlling virtual computers",
         "version": "1.0.0",
         "active_sessions": len(registry.computers)
