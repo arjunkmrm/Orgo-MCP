@@ -16,11 +16,9 @@ startCommand:
       orgoApiKey:
         type: string
         description: Orgo API key
-        default: no_need_to_set
       anthropicApiKey:
         type: string
         description: Anthropic API key
-        default: no_need_to_set
 
 
   exampleConfig:
