@@ -5,7 +5,7 @@ startCommand:
   commandFunction:
     # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
     |-
-    (config) => ({ command: "python", args: ["server.py"], env: { ORGO_API_KEY: config.orgoApiKey, ANTHROPIC_API_KEY: config.anthropicApiKey } })
+    (config) => ({ command: "python", args: ["server.py"], env: {} })
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
     type: object
@@ -19,7 +19,6 @@ startCommand:
       anthropicApiKey:
         type: string
         description: Anthropic API key
-
 
   exampleConfig:
     ORGO_API_KEY: your_orgo_api_key
