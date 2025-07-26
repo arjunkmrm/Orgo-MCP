@@ -27,7 +27,7 @@ export ORGO_API_KEY="your_orgo_key"
 export ANTHROPIC_API_KEY="your_anthropic_key"
 
 # Start server
-python computer_mcp_server.py
+python server.py
 ```
 
 Server runs on `http://127.0.0.1:9000`
@@ -82,6 +82,15 @@ await client.call_tool("prompt", {
     "instruction": "Open Firefox and go to google.com"
 })
 ```
+
+## Smithery Configuration
+
+This MCP is configured for use with Smithery. The `smithery.yaml` file defines the required configuration:
+
+- `orgoApiKey`: Your Orgo API key
+- `anthropicApiKey`: Your Anthropic API key
+
+When using with Smithery, these keys will be automatically passed as environment variables to the server.
 
 ## Requirements
 
