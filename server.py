@@ -2,6 +2,7 @@
 Computer Use MCP: Virtual computer control through MCP.
 """
 import os
+from dotenv import load_dotenv
 import base64
 import logging
 import sys
@@ -9,6 +10,8 @@ from typing import Dict, List, Optional, Any
 from pydantic import BaseModel, Field
 
 from fastmcp import FastMCP, Context
+
+load_dotenv()
 
 # Configure logging to stdout
 logging.basicConfig(
@@ -381,5 +384,5 @@ def desktop_guidelines() -> str:
 """
 
 if __name__ == "__main__":
-    #mcp.run()
-    mcp.run(transport="streamable-http", host="127.0.0.1", port=9000)
+    mcp.run()
+    # mcp.run(transport="streamable-http", host="127.0.0.1", port=8000)
